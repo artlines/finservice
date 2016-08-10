@@ -1,0 +1,221 @@
+
+%h1{
+	font-size: 1.6rem;
+	@include color('red');
+	margin-bottom: 40px;
+}
+
+//inner page	
+.right_content{
+	padding-left: 80px;
+	padding-bottom: 40px;
+}
+h1{
+	text-transform: uppercase;
+	@extend %h1;
+}
+p:not(.secondary_phone,.primary_phone),.content_ol li{
+	margin-bottom: 20px;
+}
+p.head{
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+.category {
+	.right_content{
+		padding-left: 85px;
+	}
+}
+.category-colored .breadcrumb {
+	padding-right: 0;
+}
+	
+//calendar
+.gallery{
+	h1{
+		text-transform: none;
+		@extend %h1;
+	}
+	img{
+		display: inline-block;
+		width: 45%;
+	}
+	img+img{
+		margin: 0 0 0 40px;
+	}
+}
+.colored_item{
+	position: relative;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	&:hover .colored_item_img{
+		filter: blur(2px);
+	}
+	&:hover .colored_item_caption h2{
+		opacity: 1;
+		transform: translate(0,-30px);
+	}
+	.colored_item_img{
+		width: 300px;
+		height: 200px;
+		background-size: cover !important;
+		@include transition(.5s);
+	}
+	.colored_item_caption{
+		position: absolute;
+		bottom: 0;
+		text-align: center;
+		width: calc(100% - 30px);
+
+		h2{
+			font-size: 1.2rem;
+			color: #fff;
+			font-weight: 300;
+			@include transition(.5s);
+			opacity: 0;
+		}
+	}
+}
+.category-calendar{
+	h1{
+		text-transform: uppercase;
+		@extend %h1;
+	}
+	.calendar_item{
+		margin-bottom: 100px;
+		float: left;
+		width: 446px;
+		max-height: 490px;
+		height: 500px;
+		overflow: hidden;
+		border: 1px solid #aeaeae;
+		.calendar_img{
+			@include transition(.5s); 
+
+			&:hover{
+				filter: contrast(1.25);
+			}
+			background-size: container;
+			width: 100%;
+			height: 336px;
+		}
+		.item_caption{
+			padding: 20px;
+			p{
+				margin-bottom: 0;
+			}
+			h2, .date{
+				margin: 0;
+				font-size: 1.1rem;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			h2{
+				padding-bottom: 20px;
+			}
+			a{
+				@include color('red');
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.right{
+		margin-left: 65px;
+	}
+}
+.pagination_container{
+	text-align: center;
+}
+.pagination{
+	.page-numbers{
+		padding: 5px 10px;
+		color: #000;
+		border-radius: 20px;
+		border: 1px solid #fff;
+
+		&:hover{
+			border: 1px solid #4a4949;
+		}
+	}
+	.current{
+		border: 1px solid #4a4949;
+		background-color: #4a4949;
+		color: #fff;
+	}	
+}
+.contacts_left, .contacts_right{
+	position: relative;
+	overflow-x: hidden;
+	.text{
+		height: 800px;
+	}
+}
+.contacts_left{
+	h1{
+		padding-top: 75px;
+	}
+
+	.text{
+		padding-left: 27%;
+	}	
+	#map{
+		width: 50%;
+		height: 100%;
+		position: absolute;	
+		top: 0;
+		right: 0;
+	}
+}
+
+.contacts_right{
+	.text{
+	    padding-right: 23.5%;
+		padding-top: 100px;
+		text-align: right;
+	}
+	#map_store{
+		width: 50%;
+		height: 100%;
+		position: absolute;	
+		bottom: 0;
+		left: 0;
+	}
+}
+.more-link{
+	@include color('red');
+	display: inline-block;
+	margin-top: 5px;
+}
+.container-big{
+	padding-bottom: 40px;
+}
+.breadcrumb{
+	padding-right: 65px;
+}
+@media screen and ( max-width: 900px ) {
+	.breadcrumb, h1,.right_content,.colored_item {
+		text-align: center;
+	}
+	.category .right_content{
+		padding-left: 0;
+	}
+	.colored_item .colored_item_img{
+		display: inline-block;
+	}
+}
+.cat-item-none{
+	display: none;
+}
+.item h2{
+	font-size: 1.3em;
+	@include transition(.5s); 
+	&:hover{
+		@include color('red');
+	}
+}
+.category-calendar .breadcrumb, .single .breadcrumb{
+	padding-right: 0;
+}

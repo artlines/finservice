@@ -1,0 +1,19 @@
+
+@mixin background-color($key){
+	background-color: background-color($key);
+}
+@mixin background-image($key){
+	background-image: background-color($key);
+}
+
+@mixin font-size($key){
+	font-size: font-size($key);
+}
+
+@mixin color($key){
+	color: color($key);
+}
+
+@mixin transition($key){
+	transition: all $key ease-in-out;
+}

@@ -1,0 +1,145 @@
+@media (min-width: 992px) and (max-width: 1600px){
+	.calendar .container {
+	    width: 1060px;
+	}	
+	.calendar .right{
+		margin-left: 65px;
+	}
+	.contacts_right .text{
+		padding-right: 17.5%;
+	}
+	.contacts_left .text{
+		padding-left: 22.5%;
+	}
+}
+@media (max-width: 992px){
+	.owl-carousel{
+		display: none !important;
+	}	
+	.top_sales_item{
+		margin-bottom: 20px;
+		overflow: hidden;
+	}
+	.top_sales{
+		padding-bottom: 0;
+	}
+	.advantages .advandages_desc{
+		padding-bottom: 0;
+	}
+	h2{
+		padding-top: 20px;
+	}
+	.bottom_nav{
+		padding: 40px 0;
+		.bottom_nav_item{
+			padding-bottom: 25px;
+		}
+	}
+	.calendar{
+		.right{
+			margin-left: 0;
+		}
+		.right_content{
+			padding-left: 15px;
+		}
+		.calendar_item{
+			width: 100%;
+			.calendar_img {
+		    	background-size: cover !important;
+		    }
+		} 
+	} 
+	footer .footer_nav{
+		padding: 0;	
+		ul{
+	    padding-left: 15px;
+	}	
+	} 
+	footer .footer_bottom_nav{
+		padding: 0;
+		padding-left: 0;
+		ul{
+			padding-left: 0;
+		}	
+	} 
+	footer .footer_bottom_nav,footer .footer_nav {
+		//padding-left: 38px;
+	}
+	footer .copyright .copyright_caption{
+		padding-left: 38px;
+		text-align: left;
+		padding-top: 0;
+	}
+	
+	.contacts_left ,.contacts_right {
+		h1{
+			padding-top: 20px;
+		}
+		.text{
+			height: auto;
+			padding: 20px 40px;
+			text-align: left;
+		}
+		#map, #map_store{
+			width: 100%;
+			height: 400px;
+			position: static;
+			margin: 20px 0;
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.carousel{
+		display: none;
+	}
+	.logo{
+		float: none;
+		margin: 10px auto;
+		width: 240px;
+		max-width: 100%;
+		height: 50px;
+    	background-size: contain !important;
+	}
+	nav ul.container{
+		display: none;
+		padding: 0;
+			li{
+				width: 100%;
+				padding-left: 0;
+				text-align: center;
+			}
+	}
+	.hamburger{
+		display: block;
+	}
+	.contact_info{
+		float: none;
+		.primary_phone{
+			display: none;
+		}
+		.phones_hide,address{
+			width: 300px;
+		    margin: 0 auto;
+		    text-align: center;
+		    opacity: 1;
+		    position: relative;	
+		    p{
+		    	margin: 0;
+		    }
+		}
+	}
+	.gallery{
+		img{	
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		img+img{
+			margin-left: 0;
+		}
+	}
+	.right_content{
+		padding-left: 15px;
+	}
+}
+

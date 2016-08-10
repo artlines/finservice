@@ -1,0 +1,67 @@
+@import '_reset';
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900&subset=latin,cyrillic);
+@import 'owl.carousel.css';
+@import '_font-awesome';
+@import '_hover-min';
+@import '_mixins';
+@import '_bootstrap-theme';
+@import '_variables';
+@import '_bootstrap';
+@import '_header';
+@import '_home';
+@import '_inner';
+@import '_footer';
+@import '_media';
+
+//general styles
+html, body{
+	font-family: 'Roboto', sans-serif;
+	@include font-size('base'); 
+	@include color('primary'); 
+}
+a{
+	text-decoration: none;
+	@include color('primary'); 
+
+}
+
+p{
+
+}
+
+ul{
+	li{
+		list-style: none;
+	}
+}
+
+.clear{
+	clear: both;
+}
+#hoverNav a{
+	transition: none;
+}
+.more{
+	display: inline-block;
+	background-color: transparent;
+    border: 1px solid;
+    padding: 7px 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+	@include transition(.2s);
+
+    &:hover{
+		@include background-color('red');
+		 border: 1px solid #e31e24;
+		 color: #fff;
+    }
+    &__colored{
+    	margin: 0;
+    }
+}
+.form-control{
+	height: 40px;
+	border: 1px solid #000;
+}
