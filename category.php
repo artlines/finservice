@@ -25,9 +25,7 @@ if (is_category(array('calendar', 'art', 'tech'))): $i=0;?>
 				<?endwhile;?>
 				<div class="clear"></div>
 				<div class="pagination_container">
-					<ul class="pagination">
-					    <?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
-					</ul>
+					<?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
 				</div>
 			</section>
 		</div>
@@ -58,14 +56,8 @@ if (is_category(array('calendar', 'art', 'tech'))): $i=0;?>
 		</div>
 					<div class="clear"></div>
 					<div class="pagination_container">
-						<ul class="pagination">
-						    <?=the_posts_pagination( array(
-								'mid_size'  => 3,
-								'prev_text' => __( '&laquo;', 'textdomain' ),
-								'next_text' => __( '&raquo;', 'textdomain' ),
-							) );;?>
-						</ul>
-					</div>
+					    <?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
+					/div>
 				</section>
 			</div>
 		</main>
@@ -110,6 +102,9 @@ if (is_category(array('calendar', 'art', 'tech'))): $i=0;?>
 							</div>
 						</div>
 					<?endforeach;?>
+					<div class="pagination_container">
+					    <?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
+					</div>
 				</div>
 			</section>
 		</div>
@@ -118,11 +113,11 @@ if (is_category(array('calendar', 'art', 'tech'))): $i=0;?>
 <main class="container-big">
 	<div class="row">
 		<nav class="col-md-3 left_menu">
-			<ul class="primary_menu">
 				<?php
 				$current_category = get_query_var('cat');
 				$all_categories = get_categories(array('parent' => $current_category,'hide_empty' => 0));?>
-				<?php /*echo '<pre>'; var_dump($all_categories);*/ ?>	
+				<?php if(!empty($all_categories)): ?>	
+				<ul class="primary_menu">
 				<?foreach ($all_categories as $value):?>
 					<li class="cat-item"><a href="<?=$value->slug;?>"><?=$value->name;?></a>
 						<ul class="children">
@@ -147,18 +142,27 @@ if (is_category(array('calendar', 'art', 'tech'))): $i=0;?>
 					<?php endforeach ?>
 				<?php endif ?>
 		  	</ul>
+		  	<?endif;?>
 		</nav>
 		<section class="col-md-9 right_content ">
 		<?php if ( function_exists('yoast_breadcrumb')) 
 			{yoast_breadcrumb('<ol class="breadcrumb">','</ol>');} ?>
 		<h1><?single_cat_title();?></h1>
-
-			<?while(have_posts()):the_post();?>
-				<a href="<?the_permalink();?>" class="item">
-					<h2><?the_title();?></h2>
-					<p><?the_excerpt();?></p>
-				</a>
-			<?endwhile;?>
+		<?$category = get_category(get_query_var('cat'), false);
+			if ($category->parent == 0):
+				echo category_description();
+			else:
+				echo category_description();
+				while(have_posts()):the_post();?>
+					<a href="<?the_permalink();?>" class="item">
+						<h2><?the_title();?></h2>
+						<p><?the_excerpt();?></p>
+					</a>
+				<?endwhile;?>
+				<div class="pagination_container">
+				    <?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
+				</div>
+			<?endif;?>
 		</section>
 	</div>
 </main>

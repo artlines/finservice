@@ -31,16 +31,14 @@ nav{
 	@include background-color('red'); 
 	ul.container{
 		margin: 0 auto;
-		padding: 0 0 0 85px;
+		padding: 0;
 		position: relative;
-		li{
-			float: left;
-			padding-left: 52px; 
+		>li{
 			line-height: 1.2rem;
 			&:first-child{
 				padding-left: 0;
 			}
-			a{
+			>a{
 				text-transform: uppercase;
 				line-height: 55px;
 				@include color('base'); 
@@ -118,6 +116,7 @@ nav.left_menu{
 	background-color: #555555;
 	font-weight: 300;
 	padding: 0;
+	min-height: 0;
 	margin-top: 65px;
 
 	ul.primary_menu{
@@ -239,5 +238,70 @@ span.breadcrumb_last{
 	z-index: 10;
 	&:hover{
 		cursor: pointer;
+	}
+}
+#menu-header{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	a{
+		color: #fff;
+		padding: 5px 0;
+	}
+	.children{
+    		a{
+    			font-weight: 300;
+    			&:hover{
+    				color: #c5c5c5;
+    			}
+    		}
+		.hvr-underline-reveal:before {
+		    height: 2px;
+		    -webkit-transform: translateY(2px);
+		    -ms-transform: translateY(2px);
+		    transform: translateY(2px);
+		}
+	}
+	>.cat-item{
+		>.children{
+			display: none;
+			position: absolute;
+			z-index: 999;
+			left: 0;
+			width: 100%;
+			background: #555;
+			line-height: 1;
+			&:after{
+				content: '';
+				clear: both;
+			}
+			>.cat-item{
+				float: left;
+				width: 33%;
+				> a{
+					border-bottom: 2px solid;
+					display: inline-block;
+					margin: 10px;
+    				font-size: 1.1em;
+				}
+
+				>.children{
+					padding-left: 40px;
+					>.cat-item{
+						>.children{
+							padding-left: 20px;
+						}
+					}
+				}
+			}
+		}
+		&:hover{
+			>.children{
+				display: block;
+				.children{
+					display: block;
+				}
+			}
+		}
 	}
 }

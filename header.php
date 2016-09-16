@@ -36,12 +36,23 @@
             </div>
         </div>
     </header>
-
-        <?wp_nav_menu( array(
-            'theme_location'  => 'header',
-            'menu'            => 'header', 
-            'container'       => 'nav', 
-            'container_id'    => 'head_menu',
-            'menu_class'      => 'container', 
-        ) );?>
+    <?$args = array(
+        'child_of'           => 0,
+        'exclude'            => '1,4,27,28,29',
+        'hierarchical'       => true,
+        'echo'               => 1,
+        'title_li'           => '',
+        'depth'              => 0,
+        'current_category'   => 1,
+        'hide_empty'          => 0,
+    );?>
+    <nav id="head_menu" class="menu-header-container">
+        <ul id="menu-header" class="container">
+            <li ><a href="/o-kompanii/" class="hvr-underline-reveal">О компании</a></li>
+            <?php wp_list_categories( $args ); ?>
+            <li><a href="/colored/" class="hvr-underline-reveal">ОКРАШЕННЫЕ ОБЪЕКТЫ</a></li>
+            <li><a href="/kontakty/" class="hvr-underline-reveal">Контакты</a></li>
+        </ul>
+    </nav>
                 
+           

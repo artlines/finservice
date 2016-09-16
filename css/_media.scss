@@ -1,4 +1,4 @@
-@media (min-width: 992px) and (max-width: 1600px){
+@media (min-width: 1000px) and (max-width: 1600px){
 	.calendar .container {
 	    width: 1060px;
 	}	
@@ -12,7 +12,22 @@
 		padding-left: 22.5%;
 	}
 }
-@media (max-width: 992px){
+@media (max-width: 1000px){
+	#menu-header{
+		display: none;
+	}
+	nav ul.container{
+		display: none;
+		padding: 0;
+			li{
+				width: 100%;
+				padding-left: 0;
+				text-align: center;
+			}
+	}
+	.hamburger{
+		display: block;
+	}
 	.owl-carousel{
 		display: none !important;
 	}	
@@ -90,6 +105,9 @@
 }
 
 @media (max-width: 768px){
+	.children{
+		display: none !important;
+	}
 	.carousel{
 		display: none;
 	}
@@ -101,18 +119,7 @@
 		height: 50px;
     	background-size: contain !important;
 	}
-	nav ul.container{
-		display: none;
-		padding: 0;
-			li{
-				width: 100%;
-				padding-left: 0;
-				text-align: center;
-			}
-	}
-	.hamburger{
-		display: block;
-	}
+	
 	.contact_info{
 		float: none;
 		.primary_phone{

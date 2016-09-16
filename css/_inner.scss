@@ -9,6 +9,8 @@
 .right_content{
 	padding-left: 80px;
 	padding-bottom: 40px;
+	min-height: 33.5vh;
+
 }
 h1{
 	text-transform: uppercase;
@@ -194,6 +196,7 @@ p.head{
 }
 .breadcrumb{
 	padding-right: 65px;
+	text-align: left;
 }
 @media screen and ( max-width: 900px ) {
 	.breadcrumb, h1,.right_content,.colored_item {
@@ -218,4 +221,23 @@ p.head{
 }
 .category-calendar .breadcrumb, .single .breadcrumb{
 	padding-right: 0;
+}
+.upload{
+	text-transform: uppercase;
+    font-weight: bold;
+}
+.upload_files{
+	margin: 20px 0;
+	border-top: 1px dashed;
+	border-bottom: 1px dashed;
+	p{
+		padding: 10px 0;
+		a:after{
+			content: '⇓';
+			padding-left: 10px;
+		}
+		a:hover{
+			@include color('red'); 
+		}
+	}
 }
