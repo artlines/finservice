@@ -36,21 +36,30 @@
             </div>
         </div>
     </header>
-    <?$args = array(
+    <? $args = array(
         'child_of'           => 0,
         'exclude'            => '1,4,27,28,29',
         'hierarchical'       => true,
         'echo'               => 1,
         'title_li'           => '',
-        'depth'              => 0,
+        'depth'              => 4,
         'current_category'   => 1,
-        'hide_empty'          => 0,
+        'hide_empty'         => 0,
+        'use_desc_for_title' => 0,
     );?>
-    <nav id="head_menu" class="menu-header-container">
-        <ul id="menu-header" class="container">
+    <nav role="navigation" id="top-menu">
+        <ul id="menu-header" class="menu container">
             <li ><a href="/o-kompanii/" class="hvr-underline-reveal">О компании</a></li>
             <?php wp_list_categories( $args ); ?>
-            <li><a href="/colored/" class="hvr-underline-reveal">ОКРАШЕННЫЕ ОБЪЕКТЫ</a></li>
+            <li><a href="/colored/" class="hvr-underline-reveal">ОБЪЕКТЫ</a></li>
+            <li class="cat-item">
+                <a href="#" class="hvr-underline-reveal">СТАТЬИ</a>
+                <ul class="children">
+                    <li class="cat-item"><a href="/art/">Искусство</a></li>
+                    <li class="cat-item"><a href="/calendar/">Календарь</a></li>
+                    <li class="cat-item"><a href="/tech/">Технологии</a></li>
+                </ul>
+            </li>
             <li><a href="/kontakty/" class="hvr-underline-reveal">Контакты</a></li>
         </ul>
     </nav>

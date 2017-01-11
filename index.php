@@ -6,7 +6,15 @@
     <section class="top_sales container">
         <h2>Топ продаж</h2>
         <div class="row">
-        <?$posts = get_posts(array('tag' => 'top-prodazh', 'numberposts' => 3));
+        <? $posts = get_posts([
+            'numberposts' => 3,
+            'meta_query' => array(
+                array(
+                    'key' => 'топ_продаж',
+                    'value' => 'yes',
+                )
+            ),
+        ]);
         foreach($posts as $post): setup_postdata($post);?>
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="top_sales_item">
@@ -18,7 +26,7 @@
                     <div class="top_sales_area">
                         <p class="top_sales_area_head">Область применения TEMAPRIME</p>
                         <?if(get_field('area_use')): the_field('area_use');endif;?>
-                        <button class="more">Подробнее > </button>
+                        <a href="<? the_permalink(); ?>" class="more">Подробнее > </a>
                     </div>
                 </div>
             </div>
@@ -66,4 +74,4 @@
             </ul>
         </div>
     </section>
-<? get_footer(); ?>
+<? get_footer();

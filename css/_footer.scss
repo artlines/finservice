@@ -1,4 +1,8 @@
 footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 	@include background-color('grey-light');
 	@include color('base');
 	font-weight: 200;
@@ -6,7 +10,6 @@ footer{
 	a{
 		@include transition(.5s);
 	}
-	
 
 	.footer_contacts, .footer_nav,.footer_bottom_nav{
 		padding: 0 0 30px 38px;

@@ -24,8 +24,8 @@
         </div>
         <div class="copyright">
             <div class="container">
-                <a href="http://web.ra-kolibri.com"><div class="logo"></div></a>
-                <div class="copyright_caption">Разработка сайта - <a href="http://web.ra-kolibri.com">РА «Колибри»</a></div>
+                <a href="http://web.ra-kolibri.com"  target="_blank"><div class="logo"></div></a>
+                <div class="copyright_caption">Разработка сайта - <a href="http://web.ra-kolibri.com" target="_blank">РА «Колибри»</a></div>
             </div>
         </div>
     </footer>

@@ -1,67 +1,90 @@
-@import '_reset';
+//@import "reset";
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900&subset=latin,cyrillic);
-@import 'owl.carousel.css';
-@import '_font-awesome';
-@import '_hover-min';
-@import '_mixins';
-@import '_bootstrap-theme';
-@import '_variables';
-@import '_bootstrap';
-@import '_header';
-@import '_home';
-@import '_inner';
-@import '_footer';
-@import '_media';
+@import "font-awesome";
+@import "hover-min";
+@import "mixins";
+@import "bootstrap-theme";
+@import "variables";
+@import "bootstrap";
+@import "header";
+@import "home";
+@import "inner";
+@import "footer";
+@import "media";
+@import "error404";
+@import "category";
+@import "menu";
 
 //general styles
 html, body{
-	font-family: 'Roboto', sans-serif;
-	@include font-size('base'); 
-	@include color('primary'); 
+  font-family: 'Roboto', sans-serif;
+  @include font-size('base');
+  @include color('primary');
+  position: relative;
 }
-a{
-	text-decoration: none;
-	@include color('primary'); 
 
+body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  @include color('primary');
 }
 
 p{
 
 }
 
-ul{
-	li{
-		list-style: none;
-	}
-}
-
 .clear{
-	clear: both;
+  clear: both;
 }
 #hoverNav a{
-	transition: none;
+  transition: none;
 }
 .more{
-	display: inline-block;
-	background-color: transparent;
-    border: 1px solid;
-    padding: 7px 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    font-size: 1.1rem;
-    margin-top: 20px;
-	@include transition(.2s);
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid;
+  padding: 7px 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  @include transition(.2s);
 
-    &:hover{
-		@include background-color('red');
-		 border: 1px solid #e31e24;
-		 color: #fff;
-    }
-    &__colored{
-    	margin: 0;
-    }
+  &:hover{
+    @include background-color('red');
+    border: 1px solid #e31e24;
+    color: #fff;
+  }
+  &__colored{
+    margin: 0;
+  }
 }
 .form-control{
-	height: 40px;
-	border: 1px solid #000;
+  height: 40px;
+  border: 1px solid #000;
+}
+
+main{
+  padding-bottom: 50px;
+}
+
+.pdf{
+  background: url('../img/pdf.png') no-repeat 0 50%;
+  line-height: 30px;
+  display: inline-block;
+  padding-left: 30px;
+  color: map_get($color, red);
+  margin: 10px 0;
+}
+
+p{
+  margin: 0;
+}
+
+p + p{
+  margin-bottom: 1em;
 }

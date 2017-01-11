@@ -32,8 +32,12 @@ remove_filter( 'the_excerpt', 'wpautop' );
 if ( !is_admin() ) {
 	function finservice_scripts() {
         wp_enqueue_style( 'css', get_template_directory_uri().'/css/main.css');
-		wp_enqueue_script( 'plugins_js', get_template_directory_uri() . '/js/plugins.js', array('jquery'), true );
-        wp_enqueue_script( 'js', get_template_directory_uri() . '/js/main.js', array('jquery'), true );
+        wp_enqueue_style( 'owl-css', get_template_directory_uri().'/css/owl.carousel.css');
+
+        wp_deregister_script('jquery');
+        wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js');
+		wp_enqueue_script( 'plugins_js', get_template_directory_uri() . '/js/plugins.js', ['jquery'], true );
+        wp_enqueue_script( 'js', get_template_directory_uri() . '/js/main.js', ['jquery'], true );
 	}
 	
 	add_action( 'wp_enqueue_scripts', 'finservice_scripts' );
@@ -44,6 +48,7 @@ register_nav_menus(array(
 	'footer_left' => 'Нижнее меню слева',
 	'footer_right' => 'Нижнее меню справа',
 ));
+
 function wp_corenavi() {
   global $wp_query;
   $pages = '';
@@ -63,6 +68,7 @@ function wp_corenavi() {
   if ($total == 1 && $max > 1) $pages = '<span class="pages">Страница ' . $current . ' из ' . $max . '</span>'."\r\n";
   echo $pages . paginate_links($a);
   if ($max > 1) echo '</div>';
+    return $a;
 }
 
 function exclude_tags($tags) {
@@ -76,3 +82,5 @@ function exclude_tags($tags) {
     return $newtags;
 }
 add_filter( 'get_tags', 'exclude_tags');
+
+get_template_part('functions/post_types');

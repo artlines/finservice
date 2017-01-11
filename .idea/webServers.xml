@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="90a84b45-edce-4191-acb7-9a1fd95be3da" name="finservis" url="http://finservice.it-kolibri.com">
+        <fileTransfer host="it-kolibri.com" port="21" rootFolder="/finservice.it-kolibri.com/www/wp-content/themes/finservice">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" showHiddenFiles="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
